@@ -19,3 +19,4 @@ def func(x: float) -> float:
     return fx
 
 print(piecewise_quadrature(LIMIT, MAX, DIVIDE))
+
