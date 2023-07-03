@@ -5,7 +5,7 @@ MAX = 1
 DIVIDE = 1000
 
 # 区分求積法
-def piecewise_quadrature (LIMIT: int, MAX: int, DIVIDE: int):
+def piecewise_quadrature (LIMIT: int, MAX: int, DIVIDE: int) -> float:
     s = 0
     h = float(1/DIVIDE)
 
