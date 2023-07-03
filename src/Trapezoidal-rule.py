@@ -4,7 +4,7 @@ LIMIT = 0
 MAX = 1
 DIVIDE = 4
 
-# 区分求積法
+# 題蛍光式
 def piecewise_quadrature (LIMIT: int, MAX: int, DIVIDE: int) -> float:
     s = 0
     h = float(1/DIVIDE) / 2
@@ -19,3 +19,4 @@ def func(x: float) -> float:
     return fx
 
 print(piecewise_quadrature(LIMIT, MAX, DIVIDE))
+
