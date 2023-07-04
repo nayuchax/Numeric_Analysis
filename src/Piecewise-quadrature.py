@@ -4,10 +4,11 @@ LIMIT = 0
 MAX = 1
 DIVIDE = 1000
 
+
 # 区分求積法
-def piecewise_quadrature (LIMIT: int, MAX: int, DIVIDE: int) -> float:
+def piecewise_quadrature(LIMIT: int, MAX: int, DIVIDE: int) -> float:
     s = 0
-    h = float(1/DIVIDE)
+    h = float(1 / DIVIDE)
 
     divide_ndarr = np.append(np.linspace(LIMIT, MAX, DIVIDE, endpoint=False), MAX)
     divide_list = divide_ndarr.tolist()
@@ -15,8 +16,11 @@ def piecewise_quadrature (LIMIT: int, MAX: int, DIVIDE: int) -> float:
     for x in divide_list:
         s += h * func(x)
     return s
+
+
 def func(x: float) -> float:
-    fx = 1.0/(1.0 + x**2)
+    fx = 1.0 / (1.0 + x**2)
     return fx
+
 
 print(piecewise_quadrature(LIMIT, MAX, DIVIDE))
