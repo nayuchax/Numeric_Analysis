@@ -15,5 +15,5 @@ def piecewise_quadrature(LIMIT: int, MAX: int, DIVIDE: int) -> float:
 
 
 def func(x: float) -> float:
-    fx = 1.0 / (1.0 + x**2)
+    fx = x**3
     return fx

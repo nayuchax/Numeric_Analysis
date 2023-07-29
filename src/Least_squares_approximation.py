@@ -4,7 +4,7 @@ from numpy.linalg import solve
 
 # 最小二乗近似関数
 def least_squares_approximation(
-    x_arr: np.array, y_arr: np.array, x: float | int
+    x_arr: np.array, y_arr: np.array, x: float
 ) -> float:
     left_expr = np.array(
         [[len(x_arr), np.sum(x_arr)], [np.sum(x_arr), np.sum(x_arr**2)]]

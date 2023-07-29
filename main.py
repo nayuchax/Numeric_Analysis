@@ -6,35 +6,48 @@ from src import Simpson_rule
 import numpy as np
 from numpy.linalg import solve
 
+def relative_error(solution: float) -> float:
+    exact_solution = 1.20919957615614523372938550509477048818
+    e = (solution - exact_solution) / exact_solution
+    return e
+
+def absolute_error(solution: float) -> float:
+    exact_solution = 1.20919957615614523372938550509477048818
+    e = solution - exact_solution
+    return e
+
 
 def main():
-    """# 最小二乗近似
-    x = np.array([0.5, 1, 1.5, 2])
-    y = np.array([1.65, 2.72, 4.48, 7.39])
-    target_x = 1.2
-
-    print(Least_squares_approximation.least_squares_approximation(x, y, target_x))"""
-
-    """# 区分求積
     LIMIT = 0
     MAX = 1
-    DIVIDE = 4
+    DIVIDE = 1000
 
-    print(Piecewise_quadrature.piecewise_quadrature(LIMIT, MAX, DIVIDE))"""
+    # 区分求積
+    score = Piecewise_quadrature.piecewise_quadrature(LIMIT, MAX, DIVIDE)
+    r_error = relative_error(score)
+    a_error = absolute_error(score)
+    print("区分求積法")
+    print("計算結果=" + str(score))
+    print("絶対誤差=" + str(a_error))
+    print("相対誤差="+ str(r_error))
 
-    """# 台形公式
-    LIMIT = 0
-    MAX = 1
-    DIVIDE = 4
-
-    print(Trapezoidal_rule.trapezoidal_rule(LIMIT, MAX, DIVIDE))"""
+    # 台形公式
+    score = Trapezoidal_rule.trapezoidal_rule(LIMIT, MAX, DIVIDE)
+    r_error = relative_error(score)
+    a_error = absolute_error(score)
+    print("台形公式")
+    print("計算結果=" + str(score))
+    print("絶対誤差=" + str(a_error))
+    print("相対誤差=" + str(r_error))
 
     #シンプソンの公式
-    LIMIT = 0
-    MAX = 1
-    DIVIDE = 4
-    print(Simpson_rule.simpson_rule(LIMIT, MAX, DIVIDE))
-
+    score = Simpson_rule.simpson_rule(LIMIT, MAX, DIVIDE)
+    r_error = relative_error(score)
+    a_error = absolute_error(score)
+    print("シンプソン公式")
+    print("計算結果=" + str(score))
+    print("絶対誤差=" + str(a_error))
+    print("相対誤差=" + str(r_error))
 
 if __name__ == "__main__":
     main()
